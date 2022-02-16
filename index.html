@@ -115,7 +115,7 @@
           <div class="text">Gumdrop Day</div>
         </div>
       </div>
-      <div class="sixteen date-container">
+      <div id="sixteen" class="sixteen date-container">
         <div class="calender-number">16</div>
         <div class="overlay">
           <div class="text">Do A Grouch A Favor</div>
@@ -194,5 +194,61 @@
         </div>
       </div>
     </div>
+    <script>
+      var dates = [
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "ten",
+        "eleven",
+        "twelve",
+        "thirteen",
+        "fourteen",
+        "fifteen",
+        "sixteen",
+        "seventeen",
+        "eighteen",
+        "nineteen",
+        "twenty",
+        "twenty-one",
+        "twenty-two",
+        "twenty-three",
+        "twenty-four",
+        "twenty-five",
+        "twenty-six",
+        "twenty-seven",
+        "twenty-eight",
+      ];
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, "0");
+      var mm = String(today.getMonth() + 1).padStart(2, "0");
+      var yyyy = today.getFullYear();
+
+      today = dd + "/" + mm + "/" + yyyy;
+      console.log(today);
+      var date = today.substring(0, 2);
+      var selector = dates[date - 1];
+      console.log(selector);
+
+      /*--  using ID  --*/
+      // document.getElementById(selector).style.height = "5.5rem";
+      // document.getElementById(selector).style.width = "5.5rem";
+      // document.getElementById(selector).style.backgroundSize = "140px";
+      // document.getElementById(selector).style.border = "12px solid white";
+
+      /*--  using class  --*/
+      document.getElementsByClassName(selector)[0].style.height = "5.5rem";
+      document.getElementsByClassName(selector)[0].style.width = "5.5rem";
+      document.getElementsByClassName(selector)[0].style.backgroundSize =
+        "110px";
+      document.getElementsByClassName(selector)[0].style.border =
+        "12px solid white";
+    </script>
   </body>
 </html>
